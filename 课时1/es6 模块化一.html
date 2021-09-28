@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>es6 模块化</title>
+	</head>
+	<body>
+		<script type="module">
+			// 1. 默认方式导入
+			/* import * as m1 from './../public/js/m1.js';
+			m1.sing();
+			import * as m2 from './../public/js/m2.js';
+			m2.sing();
+			import * as m3 from './../public/js/m3.js';
+			console.log(m3.default.name); */
+			
+			// 2. 解构赋值形式
+			import {name, sing} from './../public/js/m1.js';
+			sing();
+			import {name as m2Name, sing as singM2} from './../public/js/m1.js';
+			singM2();
+			import {default as m3} from './../public/js/m3.js';
+			m3.sing();
+			
+			// 简便形式 针对默认暴露
+			import m3Default from './../public/js/m3.js';
+			m3Default.sing();
+		</script>
+	</body>
+</html>

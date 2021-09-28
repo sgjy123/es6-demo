@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>matchAll字符串扩展</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 定义字符串
+			const str = `
+				<ul>
+					<li>
+						<a>阿甘正传</a>
+						<p>上映时间</p>
+					</li>
+					<li>
+						<a>阿甘正传</a>
+						<p>上映时间</p>
+					</li>
+				</ul>
+			`;
+			// 声明正则
+			const reg = /<li>.*?<a>(.*?)<\/a>.*?<p>(.*?)<\/p>/sg;
+			// 调用方法
+			const result = str.matchAll(reg);
+			console.log(result);
+			
+			// for(let v of result) {
+			// 	console.log(v);
+			// }
+			const res = [...result];
+			console.log(res);
+		</script>
+	</body>
+</html>

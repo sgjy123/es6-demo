@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Set集合实践</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arr = [1,1,2,3,5,4,9,7,0,6,4,0];
+			let arr2 = [2, 3, 3, 5, 9, 10];
+			// 1. 数组去重
+			let unique = [...new Set(arr)];
+			console.log(unique);
+			// 2. 交集
+			let intersect = new Set(arr2.filter(x => new Set(arr).has(x)));
+			console.log(intersect);
+			// 3. 并集
+			let union = new Set([...arr, ...arr2]);
+			console.log(union);
+			// 4. 差集
+			let difference = new Set(arr2.filter(x => !new Set(arr).has(x)));
+			let difference2 = new Set(arr.filter(x => !new Set(arr2).has(x)));
+			console.log(difference);
+			console.log(difference2);
+		</script>
+	</body>
+</html>

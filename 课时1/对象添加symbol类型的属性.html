@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>对象添加symbol类型的属性</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let game = {
+				up() {
+					console.log('我能上');
+				},
+				name: '王者',
+				down() {
+					console.log('我能下');
+				}
+			}
+			let method = {
+				up: Symbol(),
+				down: Symbol(),
+			}
+			game[method.up] = function() {
+				console.log('我能够改变形状');
+			}
+			game[method.down] = function() {
+				console.log('我能够改变颜色');
+			}
+			game[method.up]();
+			
+			let youxi = {
+				name: '狼人杀',
+				[Symbol('say')]: function() {
+					console.log('你可以说话了');
+				},
+				[Symbol('do')]: function() {
+					console.log('你可做事了');
+				}
+			}
+			console.log(youxi);
+			const langrensha = Object.getOwnPropertySymbols(youxi);
+			console.log(langrensha);
+			youxi[langrensha[0]]();
+			youxi[langrensha[1]]();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>正则扩展-反向断言</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 声明字符串
+			let str = '1314520你知道么520啦啦啦jiayuan';
+			// 正向断言
+			// const reg = /\d+(?=啦)/;
+			// const result = reg.exec(str);
+			
+			// 反向断言
+			const reg = /(?<=么)\d+/;
+			const result = reg.exec(str);
+			console.log(result);
+		</script>
+	</body>
+</html>

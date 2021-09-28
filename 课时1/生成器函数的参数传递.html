@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>生成器函数的参数传递</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+		.reason {
+			width: 12.5rem;
+			height: 12.5rem;
+		}
+		</style>
+	</head>
+	<body>
+		<h2>这是一个关于恋爱的小游戏！</h2>
+		<button type="button" id="gameBtn">点我开始游戏</button>
+
+		<div class="game" style="display: none;">
+			<p>
+				<input type="text" id="loveName" placeholder="请输入你最喜欢的人的名字" onkeydown="loveName(event)" />
+			</p>
+			<p>
+				<textarea class="reason" rows="4" cols="4" id="reason" placeholder="为什么喜欢她"  onkeydown="reason(event)"></textarea>
+			</p>
+		</div>
+		<script type="text/javascript">
+		// 获取元素
+		const gameBtn = document.getElementById('gameBtn');
+		const gameDom = document.getElementsByClassName('game');
+		const loveNameDom = document.getElementById('loveName');
+		const reasonDom = document.getElementById('reason');
+		gameBtn.addEventListener('click', ()=>{
+			if(gameDom[0].style.display === 'none') {
+				result.next();
+				gameDom[0].style.display = 'block';
+			}
+		});
+		function loveName(event) {
+			const {keyCode} = event;
+			if(keyCode === 13) {
+				result.next(loveNameDom.value);
+			}
+		}
+		function reason(event) {
+			const {keyCode} = event;
+			if(keyCode === 13) {
+				result.next(reasonDom.value);
+			}
+		}
+		function * fn(game) {
+			alert('游戏开始了')
+			let loveName = yield game;
+			alert(`请输入喜欢${loveName}的理由`);
+			let reason = yield game;
+			alert(`你喜欢${loveName}的理由是：${reason}`);
+			if(reason.indexOf('爱') >= 0) {
+				alert(`看来你真的喜欢叫${loveName}的女孩子！祝福你们，希望你们永远在一起`);
+			}
+		}
+		let result = fn('游戏开始');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Promise-then方法</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 创建promise对象
+			const P = new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve('用户数据');
+					// reject('出错了');
+				});
+			});
+			// 调用 then 方法 then 方法的返回结果是 Promise 对象，对象状态由回调函数的执行结果决定
+			const result = P.then(function(data) {
+				console.log(data);
+				// 1. 非 Promise 类型的属性，状态为成功，返回值为对象的成功的值
+				// return '123';
+				
+				// 2. Promisele类型
+				return new Promise(function(resolve, reject){
+					resolve('成功');
+				});
+				
+				// 3. 抛出异常
+				throw new Error('出错误了');
+			}, function(err) {
+				console.warn(err);
+			});
+			console.log(result);
+		</script>
+	</body>
+</html>

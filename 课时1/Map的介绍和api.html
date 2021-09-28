@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Map的介绍和api</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let m = new Map();
+			// 设置参数
+			m.set('name', '作者姓名');
+			m.set('change', function() {
+				console.log('我可以改变世界！');
+			});
+			let val = {
+				name: '王五'
+			}
+			m.set(val, ['北京','天津','上海']);
+			// 获取长度
+			console.log(m.size);
+			// 删除元素
+			m.delete('name');
+			// 获取
+			let change = m.get('change');
+			console.log(change);
+			console.log(m.get(val));
+			// 清楚
+			// m.clear();
+			// for ...of
+			for (let s of m) {
+				console.log(s);
+			}
+			console.log(m);
+		</script>
+	</body>
+</html>

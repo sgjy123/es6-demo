@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>es6的对象方法扩展</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// Object.is 判断两个值是否完全相等
+			console.log('Object.is 判断两个值是否完全相等');
+			console.log(Object.is(120, 120));
+			console.log(Object.is(120, 121));
+			
+			// Object.assign 对象的合并
+			let obj1 = {
+				name: '小名',
+				age: 24,
+				class: '小学'
+			};
+			let obj2 = {
+				name: '小明',
+				age: 36
+			}
+			console.log('Object.assign 对象的合并');
+			console.log(Object.assign(obj1, obj2));
+			
+			// Object.setPrototype
+			// Object.getPrototype
+			const school = {
+				name: '清华大学'
+			}
+			const sities = {
+				xiaoqu: ['北京','上海']
+			}
+			console.log('Object.setPrototype   Object.getPrototype');
+			Object.setPrototypeOf(school, sities);
+			console.log(Object.getPrototypeOf(school));
+			console.log(school);
+		</script>
+	</body>
+</html>

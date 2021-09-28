@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>生成器函数声明和调用</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 生成器其实是一个特殊的函数
+			function * fn() {
+				console.log('hello');
+				yield '一个';
+				console.log('一个1');
+				yield '二个';
+				console.log('二个2');
+			}
+			let iterator = fn();
+			for (let s of iterator) {
+				console.log(s);
+			}
+		</script>
+	</body>
+</html>

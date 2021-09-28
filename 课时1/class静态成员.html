@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>class静态成员</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function Phone() {
+				
+			}
+			Phone.color = '蓝色';
+			Phone.change = function() {
+				console.log('我是一部手机，我能打电话');
+			}
+			let huawei = Phone();
+			// console.log(huawei.name);
+			// huawei.change();
+			console.log(Phone.color);
+			Phone.change();
+			
+			class Shouji {
+				static name = '手机';
+				static change() {
+					console.log('我是一部手机，我能打电话');
+				}
+			}
+			let xiaomi = new Shouji();
+			console.log(xiaomi.name);
+			console.log(Shouji.name);
+			// xiaomi.change(); // 报错
+			Shouji.change();
+		</script>
+	</body>
+</html>

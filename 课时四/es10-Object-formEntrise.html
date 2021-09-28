@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>es10-Object-fromEntries</title>
+	</head>
+	<body>
+		<h2>fromEntries-将二维数组转成对象</h2>
+		<script type="text/javascript">
+			// 1.创建二位数组
+			// const arr = [
+			// 	['name','名字'],
+			// 	['school','清华大学']
+			// ];
+			// console.log(Object.fromEntries(arr));
+			
+			// 2.创建map
+			// const m = new Map();
+			// m.set('name','tom');
+			// const result = Object.fromEntries(m);
+			// console.log(result);
+			
+			// Object.entries es8 - 讲对象转成二位数组
+			const arr = Object.entries({
+				name: '清华大学'
+			});
+			console.log(arr);
+			
+		</script>
+	</body>
+</html>

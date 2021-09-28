@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>生成器函数实例2</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function users() {
+				setTimeout(()=>{
+					let data = '用户数据';
+					iterator.next(data);
+				},1000);
+			}
+			function orders() {
+				setTimeout(()=>{
+					let data = '订单数据';
+					iterator.next(data);
+				},1000);
+			}
+			function goods() {
+				setTimeout(()=>{
+					let data = '商品数据';
+					iterator.next(data);
+				},1000);
+			}
+			function * fn() {
+				let userData = yield users();
+				console.log(userData)
+				let ordersData = yield orders();
+				console.log(ordersData)
+				let goodsData = yield goods();
+				console.log(goodsData)
+			}
+			// 调用生成器函数
+			let iterator = fn();
+			iterator.next();
+		</script>
+	</body>
+</html>

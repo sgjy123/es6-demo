@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>迭代器的应用</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const classRoom = {
+				name: '年级一班',
+				students: ['哆啦A梦', '静香', '胖虎', '小夫'],
+				[Symbol.iterator]() {
+					let index = 0;
+					let that = this;
+					return {
+						next() {
+							if (index < that.students.length) {
+								const result = {
+									value: that.students[index],
+									done: false
+								};
+								index++;
+								return result;
+							} else {
+								return {
+									value: undefined,
+									done: true
+								}
+							}
+						}
+					}
+				}
+			};
+			for (let s of classRoom) {
+				console.log(s)
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Symbol新的数据类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 创建symbol
+			let username = Symbol();
+			console.log(username, typeof username); // Symbol() "symbol"
+			let username2 = Symbol('名字');
+			let username3 = Symbol('名字');
+			console.log(username2 === username3); // false
+			let username4 = Symbol.for('名字');
+			let username5 = Symbol.for('名字');
+			console.log(username4 === username5); // true
+			
+			// 数据类型
+			// undefined, string, symbol, object, null, number, boolean
+		</script>
+	</body>
+</html>

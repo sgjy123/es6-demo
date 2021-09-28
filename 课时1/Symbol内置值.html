@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Symbol内置值</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 自定义校验结果
+			class Person {
+				static[Symbol.hasInstance](param) {
+					console.log(param);
+					return true;
+				}
+			}
+			let o = {};
+			console.log(o instanceof Person);
+			// 验证合并之后的数组是否可以展开
+			let arr1 = [1, 2, 3];
+			let arr2 = [4, 5, 6];
+			// 接收一个布尔值
+			arr2[Symbol.isConcatSpreadable] = false;
+			console.log(arr1.concat(arr2));
+		</script>
+	</body>
+</html>

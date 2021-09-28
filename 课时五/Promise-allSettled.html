@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Promise-allSettled</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 声明两个promise 对象
+			const p1 = new Promise((resolve, reject)=>{
+				setTimeout(function(){
+					resolve('商品信息-1');
+				},1000)
+			});
+			const p2 = new Promise((resolve, reject)=>{
+				setTimeout(function(){
+					// resolve('商品信息-2');
+					reject('读取信息失败');
+				},1000)
+			});
+			const result = Promise.allSettled([p1,p2]);
+			console.log(result);
+			
+			const res = Promise.all([p1,p2]);
+			console.log(res);
+		</script>
+	</body>
+</html>

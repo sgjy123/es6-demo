@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 声明变量
+    let a;
+    let b, c, d;
+    let e = 100;
+    let f = 100, g = '11110sda', h = [], l = {};
+
+    // 1.变量不能重复声明
+    /*let start = '吴亦凡';
+    let start = '郑爽';*/
+
+    // 2.块级作用域 全局， 函数， eval
+    // if else while for 都是存在块级作用域的
+    /*{
+        let boy = '男孩子';
+    }
+    console.log(boy); // 报错 ReferenceError: boy is not defined*/
+
+    // 3.不存在变量提示
+    /*console.log(song); // 报错 ReferenceError: Cannot access 'song' before initialization
+    let song = '唱歌';*/
+
+    // 4.不影响作用域链
+    /*{
+        let school = '天津大学';
+        function f1() {
+            console.log(school);
+        }
+        f1();
+    }*/
+</script>
+</body>
+</html>

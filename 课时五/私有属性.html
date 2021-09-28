@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>私有属性</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			class Person {
+				name;
+				#age;
+				#weight;
+				constructor(name, age, weight) {
+					this.name = name;
+					this.#age = age;
+					this.#weight = weight;
+				}
+				getUser() {
+					console.log(girl.name);
+					console.log(girl.#age);
+					console.log(girl.#weight);
+				}
+			}
+			// 实例化
+			const girl = new Person('小红', 18, '45KG');
+			console.log(girl);
+			// console.log(girl.name);
+			// console.log(girl.#age);
+			// console.log(girl.#weight);
+			girl.getUser();
+		</script>
+	</body>
+</html>

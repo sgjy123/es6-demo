@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>迭代器</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const arr = ['小唐','猴子','八戒','小沙'];
+			for (let s of arr) {
+				console.log(s)
+			};
+			let iterator = arr[Symbol.iterator]();
+			console.log(iterator.next());
+			console.log(iterator.next());
+			console.log(iterator.next());
+			console.log(iterator.next());
+			console.log(iterator.next());
+		</script>
+	</body>
+</html>

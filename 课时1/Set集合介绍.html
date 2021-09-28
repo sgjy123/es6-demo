@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Set集合介绍</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 创建set 
+			let s = new Set();
+			let s2 = new Set(['开心', '难过', '烦恼']);
+			console.log(s, typeof s);
+			console.log(s2);
+			//  方法
+			// console.log(s2.size); // 元素个数
+			// s2.add('兴奋'); // 添加新元素
+			// s2.delete('难过'); // 删除元素
+		    // console.log(s2.has('难过')); // 检测是否存在
+			// s2.clear(); // 清空
+			console.log(s2);
+			for (let s of s2) {
+				console.log(s);
+			}
+		</script>
+	</body>
+</html>

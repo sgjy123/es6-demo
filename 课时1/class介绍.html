@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>class介绍</title>
+	</head>
+	<body>
+		<script>
+			// 使用函数来进行声明
+			function Phone(color, price) {
+				this.color = color;
+				this.price = price;
+			}
+			Phone.prototype.call = function() {
+				console.log('我可以打电话！');
+			}
+			let xiaomi = new Phone('蓝色', 3244);
+			console.log(xiaomi);
+			xiaomi.call();
+
+			// 使用关键字 class 进行声明
+			class Shouji {
+				constructor(color, price) {
+					this.color = color;
+					this.price = price;
+				}
+				call() {
+					console.log('我可以打电话！');
+				}
+			}
+			let huawei = new Shouji('绿色', 9299);
+			console.log(huawei);
+			huawei.call();
+		</script>
+	</body>
+</html>
